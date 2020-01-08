@@ -1,4 +1,4 @@
-{% set version = "0.1.7" %}
+{% set version = "0.1.8" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/GetoptLong_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/GetoptLong/GetoptLong_{{ version }}.tar.gz
-  sha256: b9a98881db407eae9b711c4fa9170168fd5f3be1f8485cd8f28d0a60ace083ba
+  sha256: 6c0edb7233b79fb7f4789a825e8e7d7eee50b5e85b7fd5b7d74b9440fd9e1dd1
 
 build:
   noarch: generic
-  number: 1002
+  number: 0
 
   rpaths:
     - lib/R/lib/
