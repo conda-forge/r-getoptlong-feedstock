@@ -1,5 +1,4 @@
 {% set version = "0.1.8" %}
-
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -8,29 +7,29 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: GetoptLong_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/GetoptLong_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/GetoptLong/GetoptLong_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/GetoptLong_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/GetoptLong/GetoptLong_{{ version }}.tar.gz
   sha256: 6c0edb7233b79fb7f4789a825e8e7d7eee50b5e85b7fd5b7d74b9440fd9e1dd1
 
 build:
+  merge_build_host: True  # [win]
   noarch: generic
   number: 0
-
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
-    - r-globaloptions >=0.0.10
+    - r-globaloptions >=0.1.0
     - r-rjson
-
   run:
     - r-base
-    - r-globaloptions >=0.0.10
+    - r-globaloptions >=0.1.0
     - r-rjson
 
 test:
@@ -40,17 +39,15 @@ test:
 
 about:
   home: https://github.com/jokergoo/GetoptLong
-  license: GPL (>= 2)
-  summary: This is yet another command-line argument parser which wraps the  powerful Perl module
+  license: MIT
+  summary: This is yet another command-line argument parser which wraps the powerful Perl module
     Getopt::Long and with some adaptation for easier use in R. It also provides a simple
     way for variable interpolation in R.
-  license_family: GPL3
+  license_family: MIT
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/MIT'
+    - LICENSE
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
