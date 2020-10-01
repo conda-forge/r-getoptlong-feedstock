@@ -1,4 +1,4 @@
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/GetoptLong_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/GetoptLong/GetoptLong_{{ version }}.tar.gz
-  sha256: 3494b63a6caf8680f833ea1c6c295d24266bc22944ecf971cdbe3bfcb1d809dd
+  sha256: 7eb641f4f28d682f92fb93a7627430585869c4809cf09531cce1b3ebe2884f90
 
 build:
   merge_build_host: true  # [win]
