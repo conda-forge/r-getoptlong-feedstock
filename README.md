@@ -1,11 +1,11 @@
-About r-getoptlong
-==================
+About r-getoptlong-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-getoptlong-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jokergoo/GetoptLong
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-getoptlong-feedstock/blob/main/LICENSE.txt)
 
 Summary: This is yet another command-line argument parser which wraps the powerful Perl module Getopt::Long and with some adaptation for easier use in R. It also provides a simple way for variable interpolation in R.
 
